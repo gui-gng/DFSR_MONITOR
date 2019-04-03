@@ -12,7 +12,7 @@ const fileReader = require('../Util/FileReader');
 
 fileReader.listFiles();
 fileReader.readAllfiles();
-
+fileReader.consolidateFiles();
 /**
  * Get port from environment and store in Express.
  */

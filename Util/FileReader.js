@@ -17,13 +17,17 @@ module.exports = {
   },
   readAllfiles: function(){
     listFiles.forEach(file => readFile(file));
+  },
+  consolidateFiles: function(){
     let listObjects = [];
-    listFiles.forEach(file => {
-      listObjects[file] = fs.readFileSync('Data/' + file + ".json"); 
-    });
-    fs.writeFile("Data/Data.json", JSON.stringify(listObjects), "utf8", function(){
-      console.log("Saved: Data.json");
-    });
+    for(var i = 0; i < listFiles.length; i++){
+      let file = listFiles[i];
+      let raw = fs.readFileSync('Data/' + file + ".json");
+      let json = JSON.parse(raw);
+      listObjects.push({fileName: file, content: json}); 
+    }
+    let objSave = JSON.stringify(listObjects);
+    fs.writeFileSync("Data/Data.json", objSave, "utf8");
   }
 
 }
@@ -46,6 +50,7 @@ function readFile(fileName){
         if(line.substring(0, 9) == "Operation"){
           currentObj.Status = line;
           listObjects.push(currentObj);
+          i++;
           currentObj = {
             "Date":"",
             "Content":"",
@@ -63,8 +68,5 @@ function readFile(fileName){
           }
         }
       }
-
-      fs.writeFile("Data/" + fileName + ".json", JSON.stringify(listObjects), "utf8", function(){
-        console.log("Saved: " + fileName + ".json");
-      });
+      fs.writeFileSync("Data/" + fileName + ".json", JSON.stringify(listObjects), "utf8");
 }
