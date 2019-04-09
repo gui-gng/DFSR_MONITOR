@@ -58,7 +58,8 @@ function readFile(fileName){
       console.log("Separating...");
       //Separate the values from the array into the objects
       for(var i = 0; i < lineByLine.length; i++){
-        var line = lineByLine[i];
+        var line = lineByLine[i].replace("\r", "").trim();
+
         if(line.substring(0, 9) == "Operation"){
           currentObj.Status = line;
           listObjects.push(currentObj);

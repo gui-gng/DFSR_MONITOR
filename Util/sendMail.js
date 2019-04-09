@@ -27,7 +27,7 @@ async function sender(html){
   // setup email data with unicode symbols
   let mailOptions = {
     from: 'guigng@gmail.com', // sender address
-    to: "guilherme@netaware.com.au, mohanad@netaware.com.au", // list of receivers
+    to: "guigng@gmail.com",//"guilherme@netaware.com.au, mohanad@netaware.com.au", // list of receivers
     subject: "DFSR Monitor", // Subject line
     html: html // html body
   };
