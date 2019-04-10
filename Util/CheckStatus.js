@@ -1,6 +1,5 @@
 const fs = require('fs');
 
-<<<<<<< HEAD
 //let fileName = "USERDATA-TSV-BNE";
 module.exports = {
     getLastStatus: function(){
@@ -20,10 +19,4 @@ module.exports = {
         }
         return lastStatus;
     }
-=======
-
-module.exports = {
-
-    
->>>>>>> origin/master
 }

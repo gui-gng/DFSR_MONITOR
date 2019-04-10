@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-const account ={ 
+const account = { 
   user: "guigng@gmail.com",
   pass: "18GoldCoast"
 }

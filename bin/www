@@ -8,18 +8,10 @@ var app = require('../app');
 var debug = require('debug')('dfsr-monitor:server');
 var http = require('http');
 
-<<<<<<< HEAD
 const tasks = require('../Util/tasks');
 
 setInterval(function(){ tasks.run(); }, 60000);
 // tasks.run(); 
-=======
-const fileReader = require('../Util/FileReader');
-
-fileReader.listFiles();
-fileReader.readAllfiles();
-fileReader.consolidateFiles();
->>>>>>> origin/master
 /**
  * Get port from environment and store in Express.
  */

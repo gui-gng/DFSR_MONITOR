@@ -20,7 +20,6 @@ module.exports = {
    * Consolidate the files into Data.json
    */
   readAllfiles: function(){
-<<<<<<< HEAD
     for(var i = 0; i < listFiles.length; i++){
       readFile(listFiles[i]);
     }
@@ -38,20 +37,6 @@ module.exports = {
     fs.writeFileSync("Data/Data.json", JSON.stringify(listObjects), "utf8");
     console.log("Files updated");
     
-=======
-    listFiles.forEach(file => readFile(file));
-  },
-  consolidateFiles: function(){
-    let listObjects = [];
-    for(var i = 0; i < listFiles.length; i++){
-      let file = listFiles[i];
-      let raw = fs.readFileSync('Data/' + file + ".json");
-      let json = JSON.parse(raw);
-      listObjects.push({fileName: file, content: json}); 
-    }
-    let objSave = JSON.stringify(listObjects);
-    fs.writeFileSync("Data/Data.json", objSave, "utf8");
->>>>>>> origin/master
   }
 }
 
